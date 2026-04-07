@@ -5,6 +5,8 @@ import main.java.com.benefits.observer.ProfileEventNotifier;
 import main.java.com.benefits.observer.ProfileObserver;
 import main.java.com.benefits.exception.ProfileNotFoundException;
 import main.java.com.benefits.exception.DuplicateProfileException;
+import main.java.com.benefits.dao.EmployeeProfileDAO;
+import main.java.com.benefits.dao.EmployeeProfileDAOImpl;
 
 import java.util.*;
 

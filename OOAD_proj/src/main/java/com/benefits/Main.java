@@ -10,8 +10,15 @@ import main.java.com.benefits.dao.EmployeeProfileDAO;
 import main.java.com.benefits.dao.EmployeeProfileDAOImpl;
 import main.java.com.benefits.facade.BenefitsProfileFacade;
 import main.java.com.benefits.model.EmployeeProfile;
+import main.java.com.benefits.claims.*;
+import main.java.com.benefits.workflow.*;
+import main.java.com.benefits.payroll.*;
 
 import java.util.Collection;
+
+
+
+
 
 /**
  * Main entry point for the Benefits Administration System.
@@ -317,6 +324,94 @@ public class Main {
                                 "All employees",
                                 12);
 
+                
+                // ════════════════════════════════════════════════════════════
+                // COMPONENT 3 DEMOS — Approval, Claims & Payroll (RIA)
+                // ════════════════════════════════════════════════════════════
+
+                printSectionHeader("COMPONENT 3 DEMOS — Approval, Claims & Payroll");
+
+                // ── Demo 22: Valid Claim Processing ──────────────────────────
+                printDemoHeader(22, "Process Valid Claim");
+
+                try {
+                Claim claim = new Claim(101, 5000, true, true);
+
+                ClaimProcessor processor = new ClaimProcessor();
+                processor.processClaim(claim);
+
+                System.out.println("[Main] Claim processed successfully");
+
+                } catch (Exception e) {
+                System.out.println("[ERROR] " + e.getMessage());
+                }
+
+
+                // ── Demo 23: Missing Documents Exception ─────────────────────
+                printDemoHeader(23, "Claim with Missing Documents");
+
+                try {
+                Claim claim = new Claim(102, 4000, false, true);
+
+                ClaimProcessor processor = new ClaimProcessor();
+                processor.processClaim(claim);
+
+                } catch (Exception e) {
+                System.out.println("[EXPECTED ERROR] " + e.getMessage());
+                }
+
+
+                // ── Demo 24: Invalid Claim Amount ────────────────────────────
+                printDemoHeader(24, "Invalid Claim Amount");
+
+                try {
+                Claim claim = new Claim(103, -100, true, true);
+
+                ClaimProcessor processor = new ClaimProcessor();
+                processor.processClaim(claim);
+
+                } catch (Exception e) {
+                System.out.println("[EXPECTED ERROR] " + e.getMessage());
+                }
+
+
+                // ── Demo 25: Approval Timeout ────────────────────────────────
+                printDemoHeader(25, "Approval Timeout Scenario");
+
+                try {
+                ClaimContext context = new ClaimContext(new PendingState());
+                context.process();
+
+                throw new Exception("APPROVAL_TIMEOUT");
+
+                } catch (Exception e) {
+                System.out.println("[EXPECTED ERROR] " + e.getMessage());
+                }
+
+
+                // ── Demo 26: Payroll Failure ─────────────────────────────────
+                printDemoHeader(26, "Payroll Failure Scenario");
+
+                try {
+                PayrollAdapter adapter = new PayrollAdapter(new PayrollServiceImpl());
+                adapter.runPayroll(104, -500); // invalid triggers failure
+
+                } catch (Exception e) {
+                System.out.println("[EXPECTED ERROR] " + e.getMessage());
+                }   
+                
+                // ── Demo 27: Rejected Claim Scenario ─────────────────────────────────
+                printDemoHeader(27, "Rejected Claim Scenario");
+
+                try {
+                Claim claim = new Claim(105, 5000, true, false); // policy invalid
+
+                ClaimProcessor processor = new ClaimProcessor();
+                processor.processClaim(claim);
+
+                } catch (Exception e) {
+                System.out.println("[EXPECTED ERROR] " + e.getMessage());
+                }     
                 // ════════════════════════════════════════════════════════════
                 // FINAL SUMMARY
                 // ════════════════════════════════════════════════════════════

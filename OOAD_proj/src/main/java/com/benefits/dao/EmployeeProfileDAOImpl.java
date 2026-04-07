@@ -1,67 +1,142 @@
 package main.java.com.benefits.dao;
 
 import main.java.com.benefits.model.EmployeeProfile;
+
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Stub implementation of EmployeeProfileDAO.
+ * In-Memory DAO Implementation (Mock DB)
  *
- * ─────────────────────────────────────────────────────────────────
- * TO THE DATABASE TEAM:
- * This file is yours to implement. Replace each method body with
- * your actual database queries (JDBC, Hibernate, JPA, etc.).
+ * PURPOSE:
+ * This class acts as a temporary/mock database using in-memory storage.
+ * It replaces actual database interactions so that the system can run
+ * without requiring a real DB connection.
  *
- * We have defined the contract in EmployeeProfileDAO.java.
- * You just need to fulfill it here.
+ * DESIGN PATTERN:
+ * - DAO (Data Access Object) Pattern → Separates persistence logic from business logic
  *
- * Do NOT change method signatures — our code depends on them.
- * ─────────────────────────────────────────────────────────────────
+ * GRASP PRINCIPLE:
+ * - Information Expert → This class is responsible for managing EmployeeProfile data
  *
- * SOLID - Open/Closed Principle (OCP):
- * Our business logic is closed for modification but open for
- * extension — the DB team can swap implementations freely.
+ * SOLID PRINCIPLES:
+ * - SRP (Single Responsibility Principle):
+ *   This class is only responsible for data access operations.
+ *
+ * - DIP (Dependency Inversion Principle):
+ *   Higher-level modules depend on the EmployeeProfileDAO interface,
+ *   not this concrete implementation.
+ *
+ * NOTE:
+ * This implementation is mainly for testing/development purposes and
+ * can later be replaced with a real database-backed DAO.
  */
 public class EmployeeProfileDAOImpl implements EmployeeProfileDAO {
 
+    /**
+     * Simulated database using HashMap
+     *
+     * KEY   → employeeId (String)
+     * VALUE → EmployeeProfile object
+     *
+     * WHY HashMap?
+     * - Fast lookup (O(1))
+     * - Simple in-memory representation of a table
+     */
+    private final Map<String, EmployeeProfile> profileStore = new HashMap<>();
+
+    /**
+     * Saves a new EmployeeProfile into the mock database.
+     *
+     * FUNCTIONALITY:
+     * - Inserts a new profile OR overwrites if ID already exists
+     *
+     * EXCEPTION HANDLING NOTE:
+     * - No validation is done here (assumed to be handled in service layer)
+     */
     @Override
     public void save(EmployeeProfile profile) {
-        // TODO (DB Team): Insert profile record into the database
-        throw new UnsupportedOperationException(
-                "[DAO] save() - Awaiting DB team implementation.");
+        profileStore.put(profile.getEmployeeId(), profile);
+
+        // Logging to simulate DB operation visibility
+        System.out.println("[DAO MOCK] Saved profile: " + profile.getEmployeeId());
     }
 
+    /**
+     * Fetches an EmployeeProfile by employeeId.
+     *
+     * RETURNS:
+     * - EmployeeProfile if found
+     * - null if not found
+     *
+     * DESIGN NOTE:
+     * - Caller must handle null (avoids forcing exception at DAO layer)
+     */
     @Override
     public EmployeeProfile findById(String employeeId) {
-        // TODO (DB Team): Query database for profile by employeeId
-        throw new UnsupportedOperationException(
-                "[DAO] findById() - Awaiting DB team implementation.");
+        System.out.println("[DAO MOCK] Fetching profile: " + employeeId);
+
+        return profileStore.get(employeeId);
     }
 
+    /**
+     * Retrieves all EmployeeProfiles.
+     *
+     * RETURNS:
+     * - Collection of all stored profiles
+     *
+     * STRUCTURAL NOTE:
+     * - Returning Collection instead of specific List → promotes flexibility
+     */
     @Override
     public Collection<EmployeeProfile> findAll() {
-        // TODO (DB Team): Query database for all employee profiles
-        throw new UnsupportedOperationException(
-                "[DAO] findAll() - Awaiting DB team implementation.");
+        System.out.println("[DAO MOCK] Fetching all profiles");
+
+        return profileStore.values();
     }
 
+    /**
+     * Updates an existing EmployeeProfile.
+     *
+     * FUNCTIONALITY:
+     * - Overwrites the existing profile with the same employeeId
+     *
+     * ASSUMPTION:
+     * - Profile exists (validation should be done before calling this method)
+     */
     @Override
     public void update(EmployeeProfile profile) {
-        // TODO (DB Team): Update existing profile record in the database
-        throw new UnsupportedOperationException(
-                "[DAO] update() - Awaiting DB team implementation.");
+        profileStore.put(profile.getEmployeeId(), profile);
+
+        System.out.println("[DAO MOCK] Updated profile: " + profile.getEmployeeId());
     }
 
+    /**
+     * Deletes an EmployeeProfile using employeeId.
+     *
+     * BEHAVIOR:
+     * - If ID does not exist → no action (safe delete)
+     */
     @Override
     public void delete(String employeeId) {
-        // TODO (DB Team): Delete profile record from the database by ID
-        throw new UnsupportedOperationException(
-                "[DAO] delete() - Awaiting DB team implementation.");
+        profileStore.remove(employeeId);
+
+        System.out.println("[DAO MOCK] Deleted profile: " + employeeId);
     }
 
+    /**
+     * Checks whether an EmployeeProfile exists.
+     *
+     * RETURNS:
+     * - true  → if employee exists
+     * - false → otherwise
+     *
+     * USE CASE:
+     * - Validation before update/delete operations
+     */
     @Override
     public boolean existsById(String employeeId) {
-        // TODO (DB Team): Check if a profile record exists for given ID
-        throw new UnsupportedOperationException(
-                "[DAO] existsById() - Awaiting DB team implementation.");
+        return profileStore.containsKey(employeeId);
     }
 }
