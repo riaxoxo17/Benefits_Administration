@@ -1,6 +1,7 @@
 package com.benefits.manager;
 
 import com.benefits.model.EmployeeProfile;
+import com.benefits.dao.EmployeeProfileDAO;
 import com.benefits.observer.ProfileEventNotifier;
 import com.benefits.observer.ProfileObserver;
 import com.benefits.exception.ProfileNotFoundException;
