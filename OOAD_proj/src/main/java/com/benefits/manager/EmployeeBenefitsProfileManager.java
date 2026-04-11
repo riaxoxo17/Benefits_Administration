@@ -1,6 +1,7 @@
 package main.java.com.benefits.manager;
 
 import main.java.com.benefits.model.EmployeeProfile;
+import main.java.com.benefits.dao.EmployeeProfileDAO;
 import main.java.com.benefits.observer.ProfileEventNotifier;
 import main.java.com.benefits.observer.ProfileObserver;
 import main.java.com.benefits.exception.ProfileNotFoundException;
