@@ -1,6 +1,6 @@
-package main.java.com.benefits.observer;
+package com.benefits.observer;
 
-import main.java.com.benefits.model.EmployeeProfile;
+import com.benefits.model.EmployeeProfile;
 import java.util.*;
 
 /**

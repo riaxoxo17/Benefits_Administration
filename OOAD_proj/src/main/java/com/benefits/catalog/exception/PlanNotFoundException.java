@@ -1,4 +1,4 @@
-package main.java.com.benefits.catalog.exception;
+package com.benefits.catalog.exception;
 
 /**
  * Thrown when a requested benefit plan cannot be found in the system.

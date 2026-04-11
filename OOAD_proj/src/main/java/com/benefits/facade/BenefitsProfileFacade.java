@@ -1,11 +1,11 @@
-package main.java.com.benefits.facade;
+package com.benefits.facade;
 
-import main.java.com.benefits.dao.EmployeeProfileDAO;
-import main.java.com.benefits.exception.DuplicateProfileException;
-import main.java.com.benefits.exception.ProfileNotFoundException;
-import main.java.com.benefits.manager.EmployeeBenefitsProfileManager;
-import main.java.com.benefits.model.EmployeeProfile;
-import main.java.com.benefits.observer.EligibilityCheckListener;
+import com.benefits.dao.EmployeeProfileDAO;
+import com.benefits.exception.DuplicateProfileException;
+import com.benefits.exception.ProfileNotFoundException;
+import com.benefits.manager.EmployeeBenefitsProfileManager;
+import com.benefits.model.EmployeeProfile;
+import com.benefits.observer.EligibilityCheckListener;
 
 import java.util.Collection;
 

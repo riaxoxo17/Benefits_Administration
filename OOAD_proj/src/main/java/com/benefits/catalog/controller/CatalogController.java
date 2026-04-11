@@ -1,8 +1,8 @@
-package main.java.com.benefits.catalog.controller;
+package com.benefits.catalog.controller;
 
-import main.java.com.benefits.catalog.exception.PlanNotFoundException;
-import main.java.com.benefits.catalog.facade.BenefitsCatalogFacade;
-import main.java.com.benefits.catalog.model.BenefitPlan;
+import com.benefits.catalog.exception.PlanNotFoundException;
+import com.benefits.catalog.facade.BenefitsCatalogFacade;
+import com.benefits.catalog.model.BenefitPlan;
 
 import java.util.Collection;
 

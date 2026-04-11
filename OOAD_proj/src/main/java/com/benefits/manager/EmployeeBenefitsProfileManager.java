@@ -1,10 +1,10 @@
-package main.java.com.benefits.manager;
+package com.benefits.manager;
 
-import main.java.com.benefits.model.EmployeeProfile;
-import main.java.com.benefits.observer.ProfileEventNotifier;
-import main.java.com.benefits.observer.ProfileObserver;
-import main.java.com.benefits.exception.ProfileNotFoundException;
-import main.java.com.benefits.exception.DuplicateProfileException;
+import com.benefits.model.EmployeeProfile;
+import com.benefits.observer.ProfileEventNotifier;
+import com.benefits.observer.ProfileObserver;
+import com.benefits.exception.ProfileNotFoundException;
+import com.benefits.exception.DuplicateProfileException;
 
 import java.util.*;
 
