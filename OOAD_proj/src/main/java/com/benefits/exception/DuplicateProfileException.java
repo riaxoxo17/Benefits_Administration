@@ -1,4 +1,4 @@
-package main.java.com.benefits.exception;
+package com.benefits.exception;
 
 /**
  * Thrown when an attempt is made to create a profile that

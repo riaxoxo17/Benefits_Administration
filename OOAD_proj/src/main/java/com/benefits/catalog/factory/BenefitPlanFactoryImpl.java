@@ -1,10 +1,10 @@
-package main.java.com.benefits.catalog.factory;
+package com.benefits.catalog.factory;
 
-import main.java.com.benefits.catalog.model.BenefitPlan;
-import main.java.com.benefits.catalog.model.DentalPlan;
-import main.java.com.benefits.catalog.model.HealthPlan;
-import main.java.com.benefits.catalog.model.InsurancePlan;
-import main.java.com.benefits.catalog.model.RetirementPlan;
+import com.benefits.catalog.model.BenefitPlan;
+import com.benefits.catalog.model.DentalPlan;
+import com.benefits.catalog.model.HealthPlan;
+import com.benefits.catalog.model.InsurancePlan;
+import com.benefits.catalog.model.RetirementPlan;
 
 /**
  * Concrete implementation of BenefitPlanFactory.

@@ -1,4 +1,4 @@
-package main.java.com.benefits.exception;
+package com.benefits.exception;
 
 /**
  * Thrown when an employee profile cannot be found in the system.

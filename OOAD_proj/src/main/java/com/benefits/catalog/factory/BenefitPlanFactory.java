@@ -1,6 +1,6 @@
-package main.java.com.benefits.catalog.factory;
+package com.benefits.catalog.factory;
 
-import main.java.com.benefits.catalog.model.BenefitPlan;
+import com.benefits.catalog.model.BenefitPlan;
 
 /**
  * Factory interface for creating BenefitPlan objects.

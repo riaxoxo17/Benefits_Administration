@@ -1,7 +1,7 @@
-package main.java.com.benefits.catalog.model;
+package com.benefits.catalog.model;
 
-import main.java.com.benefits.catalog.strategy.CostCalculationStrategy;
-import main.java.com.benefits.catalog.strategy.InsuranceCostStrategy;
+import com.benefits.catalog.strategy.CostCalculationStrategy;
+import com.benefits.catalog.strategy.InsuranceCostStrategy;
 
 /**
  * Concrete implementation of BenefitPlan for Insurance plans.

@@ -1,4 +1,4 @@
-package main.java.com.benefits.model;
+package com.benefits.model;
 
 /**
  * Represents an employee's benefits profile.

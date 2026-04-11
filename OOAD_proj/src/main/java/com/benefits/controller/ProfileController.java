@@ -1,9 +1,9 @@
-package main.java.com.benefits.controller;
+package com.benefits.controller;
 
-import main.java.com.benefits.exception.DuplicateProfileException;
-import main.java.com.benefits.exception.ProfileNotFoundException;
-import main.java.com.benefits.facade.BenefitsProfileFacade;
-import main.java.com.benefits.model.EmployeeProfile;
+import com.benefits.exception.DuplicateProfileException;
+import com.benefits.exception.ProfileNotFoundException;
+import com.benefits.facade.BenefitsProfileFacade;
+import com.benefits.model.EmployeeProfile;
 
 import java.util.Collection;
 
