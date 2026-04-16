@@ -1,4 +1,4 @@
-package main.java.com.benefits.catalog.strategy;
+package com.benefits.catalog.strategy;
 
 /**
  * Strategy interface for benefit plan cost calculation.

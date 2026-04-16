@@ -1,7 +1,6 @@
-package main.java.com.benefits.dao;
+package com.benefits.dao;
 
-import main.java.com.benefits.model.EmployeeProfile;
-
+import com.benefits.model.EmployeeProfile;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

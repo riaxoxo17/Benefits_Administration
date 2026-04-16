@@ -1,18 +1,15 @@
-package main.java.com.benefits;
+package com.benefits;
 
-import main.java.com.benefits.catalog.controller.CatalogController;
-import main.java.com.benefits.catalog.dao.BenefitPlanDAO;
-import main.java.com.benefits.catalog.dao.BenefitPlanDAOImpl;
-import main.java.com.benefits.catalog.facade.BenefitsCatalogFacade;
-import main.java.com.benefits.catalog.model.BenefitPlan;
-import main.java.com.benefits.controller.ProfileController;
-import main.java.com.benefits.dao.EmployeeProfileDAO;
-import main.java.com.benefits.dao.EmployeeProfileDAOImpl;
-import main.java.com.benefits.facade.BenefitsProfileFacade;
-import main.java.com.benefits.model.EmployeeProfile;
-import main.java.com.benefits.claims.*;
-import main.java.com.benefits.workflow.*;
-import main.java.com.benefits.payroll.*;
+import com.benefits.catalog.controller.CatalogController;
+import com.benefits.catalog.dao.BenefitPlanDAO;
+import com.benefits.catalog.dao.BenefitPlanDAOImpl;
+import com.benefits.catalog.facade.BenefitsCatalogFacade;
+import com.benefits.catalog.model.BenefitPlan;
+import com.benefits.controller.ProfileController;
+import com.benefits.dao.EmployeeProfileDAO;
+import com.benefits.dao.EmployeeProfileDAOImpl;
+import com.benefits.facade.BenefitsProfileFacade;
+import com.benefits.model.EmployeeProfile;
 
 import java.util.Collection;
 

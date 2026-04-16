@@ -1,7 +1,6 @@
-package main.java.com.benefits.catalog.dao;
+package com.benefits.catalog.dao;
 
-import main.java.com.benefits.catalog.model.BenefitPlan;
-
+import com.benefits.catalog.model.BenefitPlan;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

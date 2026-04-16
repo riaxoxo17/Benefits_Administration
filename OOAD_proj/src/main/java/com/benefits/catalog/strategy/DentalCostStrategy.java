@@ -1,4 +1,4 @@
-package main.java.com.benefits.catalog.strategy;
+package com.benefits.catalog.strategy;
 
 /**
  * Cost calculation strategy for Dental benefit plans.

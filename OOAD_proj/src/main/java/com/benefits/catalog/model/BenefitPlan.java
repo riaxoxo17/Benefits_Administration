@@ -1,4 +1,4 @@
-package main.java.com.benefits.catalog.model;
+package com.benefits.catalog.model;
 
 /**
  * Core interface representing a Benefit Plan in the system.
